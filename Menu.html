@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="Menu.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="dropdown.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">Daisy</div>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-item">Trang chủ</a>
+        <a href="Menu.html" class="nav-item">Menu</a>
+        <a href="Giohang.html" class="nav-item">Giỏ hàng</a>
+        <a href="#" class="nav-item">Liên hệ</a>
+      </div>
+
+      <div class="user-login">
+        <button class="login-btn">
+          <i class="fas fa-user"></i> User Login
+        </button>
+        <div class="dropdown-content">
+          <a href="dangnhap.html"
+            ><i class="fas fa-sign-in-alt"></i> Đăng nhập</a
+          >
+          <a href="dangky.html"><i class="fas fa-user-plus"></i> Đăng ký</a>
+        </div>
+      </div>
+    </nav>
+    <div class="red-section">
+      <div class="left-content">
+        <h2>Thực Đơn Daisy</h2>
+        <p>
+          Khám phá các món ăn ngon tuyệt từ pizza, gà rán, đến đồ uống tươi mát!
+        </p>
+        <button class="order-btn">Order Now</button>
+      </div>
+      <div class="right-image">
+        <img src="nen.png" alt="Product Image" />
+      </div>
+    </div>
+    <!--Menu Pizza-->
+    <h3 class="Pizza-title">Pizza</h3>
+    <div class="food-grid">
+      <div class="food-item">
+        <img src="pizza1.png" alt="Pizza Margherita" />
+        <h3>Pizza Margherita</h3>
+        <p>120,000 VND</p>
+        <select class="size-select" data-id="margherita">
+          <option value="small" data-price="100000">Nhỏ (100,000 VNĐ)</option>
+          <option value="medium" data-price="120000" selected>
+            Vừa (120,000 VNĐ)
+          </option>
+          <option value="large" data-price="140000">Lớn (140,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="margherita"
+          data-name="Pizza Margherita"
+          data-image="pizza1.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="pizza2.png" alt="Pepperoni Pizza" />
+        <h3>Pepperoni Pizza</h3>
+        <p>130,000 VND</p>
+        <select class="size-select" data-id="pepperoni">
+          <option value="small" data-price="110000">Nhỏ (110,000 VNĐ)</option>
+          <option value="medium" data-price="130000" selected>
+            Vừa (130,000 VNĐ)
+          </option>
+          <option value="large" data-price="150000">Lớn (150,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="pepperoni"
+          data-name="Pepperoni Pizza"
+          data-image="pizza2.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="pizza3.png" alt="Seafood Pizza" />
+        <h3>Seafood Pizza</h3>
+        <p>160,000 VND</p>
+        <select class="size-select" data-id="seafood-pizza">
+          <option value="small" data-price="140000">Nhỏ (140,000 VNĐ)</option>
+          <option value="medium" data-price="160000" selected>
+            Vừa (160,000 VNĐ)
+          </option>
+          <option value="large" data-price="180000">Lớn (180,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="seafood-pizza"
+          data-name="Seafood Pizza"
+          data-image="pizza3.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="pizza4.png" alt="BBQ Chicken Pizza" />
+        <h3>BBQ Chicken Pizza</h3>
+        <p>140,000 VND</p>
+        <select class="size-select" data-id="bbq-chicken-pizza">
+          <option value="small" data-price="120000">Nhỏ (120,000 VNĐ)</option>
+          <option value="medium" data-price="140000" selected>
+            Vừa (140,000 VNĐ)
+          </option>
+          <option value="large" data-price="160000">Lớn (160,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="bbq-chicken-pizza"
+          data-name="BBQ Chicken Pizza"
+          data-image="pizza4.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="pizza5.png" alt="Hawaiian Pizza" />
+        <h3>Hawaiian Pizza</h3>
+        <p>130,000 VND</p>
+        <select class="size-select" data-id="hawaiian-pizza">
+          <option value="small" data-price="110000">Nhỏ (110,000 VNĐ)</option>
+          <option value="medium" data-price="130000" selected>
+            Vừa (130,000 VNĐ)
+          </option>
+          <option value="large" data-price="150000">Lớn (150,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="hawaiian-pizza"
+          data-name="Hawaiian Pizza"
+          data-image="pizza5.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="pizza6.png" alt="Vegetarian Pizza" />
+        <h3>Vegetarian Pizza</h3>
+        <p>110,000 VND</p>
+        <select class="size-select" data-id="vegetarian-pizza">
+          <option value="small" data-price="90000">Nhỏ (90,000 VNĐ)</option>
+          <option value="medium" data-price="110000" selected>
+            Vừa (110,000 VNĐ)
+          </option>
+          <option value="large" data-price="130000">Lớn (130,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="vegetarian-pizza"
+          data-name="Vegetarian Pizza"
+          data-image="pizza6.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="pizza7.png" alt="Supreme Pizza" />
+        <h3>Supreme Pizza</h3>
+        <p>150,000 VND</p>
+        <select class="size-select" data-id="supreme-pizza">
+          <option value="small" data-price="130000">Nhỏ (130,000 VNĐ)</option>
+          <option value="medium" data-price="150000" selected>
+            Vừa (150,000 VNĐ)
+          </option>
+          <option value="large" data-price="170000">Lớn (170,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="supreme-pizza"
+          data-name="Supreme Pizza"
+          data-image="pizza7.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="pizza8.png" alt="Cheese Pizza" />
+        <h3>Cheese Pizza</h3>
+        <p>100,000 VND</p>
+        <select class="size-select" data-id="cheese-pizza">
+          <option value="small" data-price="80000">Nhỏ (80,000 VNĐ)</option>
+          <option value="medium" data-price="100000" selected>
+            Vừa (100,000 VNĐ)
+          </option>
+          <option value="large" data-price="120000">Lớn (120,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="cheese-pizza"
+          data-name="Cheese Pizza"
+          data-image="pizza8.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="pizza9.png" alt="Mushroom Pizza" />
+        <h3>Mushroom Pizza</h3>
+        <p>120,000 VND</p>
+        <select class="size-select" data-id="mushroom-pizza">
+          <option value="small" data-price="100000">Nhỏ (100,000 VNĐ)</option>
+          <option value="medium" data-price="120000" selected>
+            Vừa (120,000 VNĐ)
+          </option>
+          <option value="large" data-price="140000">Lớn (140,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="mushroom-pizza"
+          data-name="Mushroom Pizza"
+          data-image="pizza9.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+    </div>
+    <!--Chicken Menu-->
+    <h3 class="Pizza-title">Chicken and Hamburger</h3>
+    <div class="food-grid">
+      <div class="food-item">
+        <img src="chicken.png" alt="Chicken Wings" />
+        <h3>Chicken Wings</h3>
+        <p>80,000 VND</p>
+        <select class="size-select" data-id="chicken-wings">
+          <option value="small" data-price="60000">Nhỏ (60,000 VNĐ)</option>
+          <option value="medium" data-price="80000" selected>
+            Vừa (80,000 VNĐ)
+          </option>
+          <option value="large" data-price="100000">Lớn (100,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="chicken-wings"
+          data-name="Chicken Wings"
+          data-image="chicken.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="chicken2.png" alt="Fried Chicken" />
+        <h3>Fried Chicken</h3>
+        <p>90,000 VND</p>
+        <select class="size-select" data-id="fried-chicken">
+          <option value="small" data-price="70000">Nhỏ (70,000 VNĐ)</option>
+          <option value="medium" data-price="90000" selected>
+            Vừa (90,000 VNĐ)
+          </option>
+          <option value="large" data-price="110000">Lớn (110,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="fried-chicken"
+          data-name="Fried Chicken"
+          data-image="chicken2.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="chicken3.png" alt="Chicken Nuggets" />
+        <h3>Chicken Nuggets</h3>
+        <p>70,000 VND</p>
+        <select class="size-select" data-id="chicken-nuggets">
+          <option value="small" data-price="50000">Nhỏ (50,000 VNĐ)</option>
+          <option value="medium" data-price="70000" selected>
+            Vừa (70,000 VNĐ)
+          </option>
+          <option value="large" data-price="90000">Lớn (90,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="chicken-nuggets"
+          data-name="Chicken Nuggets"
+          data-image="chicken3.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="chicken4.png" alt="Chicken Tenders" />
+        <h3>Chicken Tenders</h3>
+        <p>85,000 VND</p>
+        <select class="size-select" data-id="chicken-tenders">
+          <option value="small" data-price="65000">Nhỏ (65,000 VNĐ)</option>
+          <option value="medium" data-price="85000" selected>
+            Vừa (85,000 VNĐ)
+          </option>
+          <option value="large" data-price="105000">Lớn (105,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="chicken-tenders"
+          data-name="Chicken Tenders"
+          data-image="chicken4.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="chicken5.png" alt="Grilled Chicken" />
+        <h3>Grilled Chicken</h3>
+        <p>95,000 VND</p>
+        <select class="size-select" data-id="grilled-chicken">
+          <option value="small" data-price="75000">Nhỏ (75,000 VNĐ)</option>
+          <option value="medium" data-price="95000" selected>
+            Vừa (95,000 VNĐ)
+          </option>
+          <option value="large" data-price="115000">Lớn (115,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="grilled-chicken"
+          data-name="Grilled Chicken"
+          data-image="chicken5.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="chicken6.png" alt="Spicy Chicken" />
+        <h3>Spicy Chicken</h3>
+        <p>90,000 VND</p>
+        <select class="size-select" data-id="spicy-chicken">
+          <option value="small" data-price="70000">Nhỏ (70,000 VNĐ)</option>
+          <option value="medium" data-price="90000" selected>
+            Vừa (90,000 VNĐ)
+          </option>
+          <option value="large" data-price="110000">Lớn (110,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="spicy-chicken"
+          data-name="Spicy Chicken"
+          data-image="chicken6.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="Hamburger1.png" alt="Beef Burger" />
+        <h3>Beef Burger</h3>
+        <p>100,000 VND</p>
+        <select class="size-select" data-id="beef-burger">
+          <option value="small" data-price="80000">Nhỏ (80,000 VNĐ)</option>
+          <option value="medium" data-price="100000" selected>
+            Vừa (100,000 VNĐ)
+          </option>
+          <option value="large" data-price="120000">Lớn (120,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="beef-burger"
+          data-name="Beef Burger"
+          data-image="Hamburger1.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="hamburger2.png" alt="Chicken Burger" />
+        <h3>Chicken Burger</h3>
+        <p>90,000 VND</p>
+        <select class="size-select" data-id="chicken-burger">
+          <option value="small" data-price="70000">Nhỏ (70,000 VNĐ)</option>
+          <option value="medium" data-price="90000" selected>
+            Vừa (90,000 VNĐ)
+          </option>
+          <option value="large" data-price="110000">Lớn (110,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="chicken-burger"
+          data-name="Chicken Burger"
+          data-image="hamburger2.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="hamburger3.png" alt="Veggie Burger" />
+        <h3>Veggie Burger</h3>
+        <p>80,000 VND</p>
+        <select class="size-select" data-id="veggie-burger">
+          <option value="small" data-price="60000">Nhỏ (60,000 VNĐ)</option>
+          <option value="medium" data-price="80000" selected>
+            Vừa (80,000 VNĐ)
+          </option>
+          <option value="large" data-price="100000">Lớn (100,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="veggie-burger"
+          data-name="Veggie Burger"
+          data-image="hamburger3.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+    </div>
+    <!--Fries and Pasta-->
+    <h3 class="Pizza-title">Fries and Pasta</h3>
+    <div class="food-grid">
+      <div class="food-item">
+        <img src="fries1.png" alt="French Fries" />
+        <h3>French Fries</h3>
+        <p>50,000 VND</p>
+        <select class="size-select" data-id="french-fries">
+          <option value="small" data-price="40000">Nhỏ (40,000 VNĐ)</option>
+          <option value="medium" data-price="50000" selected>
+            Vừa (50,000 VNĐ)
+          </option>
+          <option value="large" data-price="60000">Lớn (60,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="french-fries"
+          data-name="French Fries"
+          data-image="fries1.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="fries2.png" alt="Curly Fries" />
+        <h3>Curly Fries</h3>
+        <p>60,000 VND</p>
+        <select class="size-select" data-id="curly-fries">
+          <option value="small" data-price="50000">Nhỏ (50,000 VNĐ)</option>
+          <option value="medium" data-price="60000" selected>
+            Vừa (60,000 VNĐ)
+          </option>
+          <option value="large" data-price="70000">Lớn (70,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="curly-fries"
+          data-name="Curly Fries"
+          data-image="fries2.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="pasta1.png" alt="Spaghetti Bolognese" />
+        <h3>Spaghetti Bolognese</h3>
+        <p>120,000 VND</p>
+        <select class="size-select" data-id="spaghetti-bolognese">
+          <option value="small" data-price="100000">Nhỏ (100,000 VNĐ)</option>
+          <option value="medium" data-price="120000" selected>
+            Vừa (120,000 VNĐ)
+          </option>
+          <option value="large" data-price="140000">Lớn (140,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="spaghetti-bolognese"
+          data-name="Spaghetti Bolognese"
+          data-image="pasta1.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="pasta2.png" alt="Carbonara Pasta" />
+        <h3>Carbonara Pasta</h3>
+        <p>130,000 VND</p>
+        <select class="size-select" data-id="carbonara-pasta">
+          <option value="small" data-price="110000">Nhỏ (110,000 VNĐ)</option>
+          <option value="medium" data-price="130000" selected>
+            Vừa (130,000 VNĐ)
+          </option>
+          <option value="large" data-price="150000">Lớn (150,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="carbonara-pasta"
+          data-name="Carbonara Pasta"
+          data-image="pasta2.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="Pasta3.png" alt="Pesto Pasta" />
+        <h3>Pesto Pasta</h3>
+        <p>110,000 VND</p>
+        <select class="size-select" data-id="pesto-pasta">
+          <option value="small" data-price="90000">Nhỏ (90,000 VNĐ)</option>
+          <option value="medium" data-price="110000" selected>
+            Vừa (110,000 VNĐ)
+          </option>
+          <option value="large" data-price="130000">Lớn (130,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="pesto-pasta"
+          data-name="Pesto Pasta"
+          data-image="Pasta3.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+    </div>
+    <!--Drink Menu-->
+    <h3 class="Pizza-title">Drinks and Ice Creams</h3>
+    <div class="food-grid">
+      <div class="food-item">
+        <img src="coca.png" alt="Coca Cola" />
+        <h3>Coca Cola</h3>
+        <p>20,000 VND</p>
+        <button
+          class="add-to-cart"
+          data-id="coca-cola"
+          data-name="Coca Cola"
+          data-image="coca.png"
+          data-price="20000"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="chocolate.png" alt="Ice Cream Chocolate" />
+        <h3>Ice Cream Chocolate</h3>
+        <p>30,000 VND</p>
+        <button
+          class="add-to-cart"
+          data-id="ice-cream-chocolate"
+          data-name="Ice Cream Chocolate"
+          data-image="chocolate.png"
+          data-price="30000"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="pepsi.png" alt="Pepsi" />
+        <h3>Pepsi</h3>
+        <p>20,000 VND</p>
+        <button
+          class="add-to-cart"
+          data-id="pepsi"
+          data-name="Pepsi"
+          data-image="pepsi.png"
+          data-price="20000"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="Fanta.png" alt="Fanta" />
+        <h3>Fanta</h3>
+        <p>20,000 VND</p>
+        <button
+          class="add-to-cart"
+          data-id="fanta"
+          data-name="Fanta"
+          data-image="Fanta.png"
+          data-price="20000"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="pepsi.png" alt="Sprite" />
+        <h3>Sprite</h3>
+        <p>20,000 VND</p>
+        <button
+          class="add-to-cart"
+          data-id="sprite"
+          data-name="Sprite"
+          data-image="pepsi.png"
+          data-price="20000"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="orange.png" alt="Orange Juice" />
+        <h3>Orange Juice</h3>
+        <p>25,000 VND</p>
+        <button
+          class="add-to-cart"
+          data-id="orange-juice"
+          data-name="Orange Juice"
+          data-image="orange.png"
+          data-price="25000"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="water.png" alt="Mineral Water" />
+        <h3>Mineral Water</h3>
+        <p>15,000 VND</p>
+        <button
+          class="add-to-cart"
+          data-id="mineral-water"
+          data-name="Mineral Water"
+          data-image="water.png"
+          data-price="15000"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="lemon.png" alt="Lemonade" />
+        <h3>Lemonade</h3>
+        <p>25,000 VND</p>
+        <button
+          class="add-to-cart"
+          data-id="lemonade"
+          data-name="Lemonade"
+          data-image="lemon.png"
+          data-price="25000"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+    </div>
+    <div class="Contact">
+      <h2 class="Contact-title">Daisy</h2>
+      <p class="contact-info">
+        <strong>Số điện thoại đặt hàng:</strong> 0123-456-789
+      </p>
+      <p class="Contact-address"><strong>Địa chỉ:</strong></p>
+      <ul>
+        <li>Cơ sở 1: 123 Đường A, Quận 1, TP.HCM</li>
+        <li>Cơ sở 2: 456 Đường B, Quận 2, TP.HCM</li>
+        <li>Cơ sở 3: 789 Đường C, Quận 3, TP.HCM</li>
+      </ul>
+      <p class="contact-info">
+        <strong>Giờ mở cửa:</strong> 9:00 AM - 10:00 PM
+      </p>
+      <p class="contact-info"><strong>Email:</strong> contact@daisypizza.com</p>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank"
+          ><i class="fab fa-facebook"></i
+        ></a>
+        <a href="https://instagram.com" target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </div>
+    </div>
+    <script>
+      document.querySelectorAll(".add-to-cart").forEach((button) => {
+        button.addEventListener("click", () => {
+          console.log("Add to Cart clicked for button:", button);
+          const id = button.getAttribute("data-id");
+          const name = button.getAttribute("data-name");
+          const image = button.getAttribute("data-image");
+
+          // Drinks không có size, dùng giá cố định
+          let price, size;
+          if (button.hasAttribute("data-price")) {
+            price = parseInt(button.getAttribute("data-price"));
+            size = "default";
+          } else {
+            const select = document.querySelector(
+              `.size-select[data-id="${id}"]`
+            );
+            if (!select) {
+              console.error("Dropdown not found for id:", id);
+              alert("Lỗi: Không tìm thấy dropdown kích thước!");
+              return;
+            }
+            size = select.value;
+            price = parseInt(
+              select.options[select.selectedIndex].getAttribute("data-price")
+            );
+          }
+
+          console.log("Adding to cart:", { id, name, size, price, image });
+
+          let cart = JSON.parse(localStorage.getItem("daisy-cart")) || {};
+          const cartId = `${id}-${size}`;
+
+          if (cart[cartId]) {
+            cart[cartId].quantity += 1;
+          } else {
+            cart[cartId] = {
+              id: id,
+              name: name,
+              size: size,
+              price: price,
+              image: image,
+              quantity: 1,
+            };
+          }
+
+          try {
+            localStorage.setItem("daisy-cart", JSON.stringify(cart));
+            console.log("Cart after adding:", cart);
+            alert(`${name} (${size}) đã được thêm vào giỏ hàng!`);
+          } catch (e) {
+            console.error("Error saving to localStorage:", e);
+            alert("Lỗi: Không thể lưu vào giỏ hàng!");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

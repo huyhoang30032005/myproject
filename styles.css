@@ -1,0 +1,735 @@
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: red;
+  margin-left: 2rem;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  margin-right: 2rem;
+  font-size: 1.2rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  font-family: "Open Sans", sans-serif;
+}
+
+.nav-item:hover {
+  color: red;
+  transform: scale(1.1);
+  text-decoration: underline;
+}
+
+/* Search Input */
+.group {
+  display: flex;
+  align-items: center;
+  position: relative;
+  max-width: 200px;
+  width: 100%;
+  margin: 0 1rem;
+}
+
+.input {
+  width: 100%;
+  height: 2.5rem;
+  padding: 0 1rem 0 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f3f3f4;
+  color: #0d0c22;
+  transition: 0.3s ease;
+}
+
+.input::placeholder {
+  color: #9e9ea7;
+}
+
+.input:focus,
+.input:hover {
+  border-color: rgba(0, 48, 73, 0.4);
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgb(0 48 73 / 10%);
+}
+
+.icon {
+  position: absolute;
+  left: 0.8rem;
+  fill: #9e9ea7;
+  width: 1rem;
+  height: 1rem;
+}
+
+/* User Login Dropdown */
+.user-login {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.login-btn {
+  background-color: red;
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.login-btn:hover {
+  background-color: white;
+  color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-content a i {
+  margin-right: 0.5rem;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  text-decoration: underline;
+}
+
+.user-login:hover .dropdown-content {
+  display: block;
+}
+
+.login-btn i {
+  margin-right: 0.4rem;
+}
+
+/* Promotional Section */
+.red-section {
+  display: flex;
+  background-color: #ff0000;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0; /* Loại bỏ border-radius để chiếm toàn bộ chiều ngang */
+  overflow: hidden;
+}
+
+.left-content {
+  flex: 1;
+  padding: 2rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.left-content h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.8rem;
+}
+
+.left-content p {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+}
+
+.order-btn {
+  background-color: white;
+  color: #ff0000;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.order-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.right-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right-image img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 1s ease;
+}
+
+.right-image img:hover {
+  transform: scale(1.05);
+  transform: rotate(90deg);
+}
+
+/* Responsive Design */
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+    margin-left: 1rem;
+  }
+
+  .nav-menu {
+    gap: 1.5rem;
+    margin-right: 1rem;
+  }
+
+  .nav-item {
+    font-size: 1rem;
+  }
+
+  .group {
+    max-width: 180px;
+  }
+
+  .left-content {
+    padding: 1.5rem;
+  }
+
+  .left-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .left-content p {
+    font-size: 0.9rem;
+  }
+
+  .right-image img {
+    max-width: 90%;
+  }
+}
+
+/* Mobile (dưới 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .logo {
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .nav-item {
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .group {
+    max-width: 100%;
+    margin: 1rem 0;
+  }
+
+  .user-login {
+    margin-right: 0;
+    margin-top: 1rem;
+  }
+
+  .dropdown-content {
+    right: 50%;
+    transform: translateX(50%);
+    min-width: 140px;
+  }
+
+  .red-section {
+    flex-direction: column;
+  }
+
+  .left-content {
+    padding: 1.5rem;
+  }
+
+  .right-image {
+    padding: 1rem;
+  }
+
+  .right-image img {
+    max-width: 80%;
+  }
+}
+
+/* Two-column Section */
+
+.full-width-section {
+  display: flex;
+  width: 100%;
+  height: auto;
+  box-sizing: border-box;
+  justify-content: center;
+  margin-top: 2rem;
+  background-color: transparent;
+  align-items: center;
+
+  .left-image img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    background-color: white;
+    transform: scale(1.05);
+  }
+}
+
+.left-image {
+  flex: 1;
+  background-color: white; /* Placeholder background for the image */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-right: 0.3px solid gray; /* Optional: Add a border between the two sections */
+}
+
+.right-content {
+  flex: 1;
+  background-color: white;
+  align-items: center;
+  justify-content: center;
+  text-align: justify;
+  padding: 2rem;
+  font-size: 1.32rem;
+  box-sizing: border-box;
+}
+.right-content h2 {
+  text-align: center;
+}
+
+/* Responsive Design for Two-column Section */
+@media (max-width: 768px) {
+  .full-width-section {
+    flex-direction: column;
+  }
+
+  .left-image,
+  .right-content {
+    flex: none;
+    width: 100%;
+  }
+
+  .right-content {
+    padding: 1.5rem;
+  }
+}
+
+.section-title {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  font-size: 4rem;
+  text-align: center;
+  font-family: "Dancing Script", cursive;
+}
+.section-title h2 {
+  margin: 0;
+  font-size: 8rem;
+  color: #333;
+  text-align: center; /* Ensure alignment */
+}
+
+.section-title2 {
+  font-weight: bold;
+  margin-bottom: 1.4rem;
+  font-size: 2rem;
+  text-align: center;
+
+  font-family: "Playfair Display", serif;
+  margin-top: 5rem; /* Add spacing from the previous section */
+}
+.section-title2 h2 {
+  margin: 0;
+  font-size: 8rem;
+  color: #333;
+  text-align: center; /* Ensure alignment */
+}
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 1rem;
+  width: 100%;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.food-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.food-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.food-item img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  max-height: 150px; /* Limit the height for uniformity */
+  object-fit: contain; /* Ensure the entire image is visible */
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  max-width: 100%; /* Ensure the image fits within its container */
+}
+
+.food-item h3 {
+  font-size: 1.2rem;
+  margin: 0.5rem 0;
+  color: #333;
+  text-align: center; /* Center-align text for better appearance */
+}
+
+.food-item p {
+  font-size: 1rem;
+  color: #666;
+  margin: 0.5rem 0;
+  text-align: center; /* Center-align text for better appearance */
+}
+
+.food-item .price {
+  font-weight: bold;
+  color: #ff0000;
+  margin-top: 0.5rem;
+  text-align: center; /* Center-align text for better appearance */
+}
+
+.food-item .add-to-cart {
+  background-color: #ff5722;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+  text-transform: uppercase;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.food-item .add-to-cart:hover {
+  background-color: #e64a19;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.food-item .add-to-cart:active {
+  background-color: #d84315;
+  transform: translateY(0);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Enhanced Food Item Styling with Page Padding */
+body {
+  margin: 0;
+  padding: 0 2rem; /* Add padding to the sides of the page */
+  box-sizing: border-box;
+}
+
+/* Enhanced Food Item Styling */
+.food-item {
+  background: linear-gradient(135deg, #ffffff, #f3f3f3);
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.food-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.food-item img {
+  width: 100%;
+  height: auto;
+  max-height: 150px;
+  object-fit: contain;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  max-width: 100%;
+  border: 2px solid #ff5722;
+  padding: 4px;
+}
+
+.food-item h3 {
+  font-size: 1.4rem;
+  margin: 0.5rem 0;
+  color: #333;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+}
+
+.food-item p {
+  font-size: 1rem;
+  color: #666;
+  margin: 0.5rem 0;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+.food-item .price {
+  font-weight: bold;
+  color: #ff0000;
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+/* Responsive Design for Food Grid */
+@media (max-width: 768px) {
+  body {
+    padding: 0 1rem; /* Reduce padding for smaller screens */
+  }
+
+  .food-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+  }
+
+  .food-item {
+    padding: 0.5rem;
+  }
+
+  .food-item img {
+    max-height: 120px;
+  }
+
+  .food-item h3 {
+    font-size: 1rem;
+  }
+
+  .food-item p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0 0.5rem; /* Further reduce padding for very small screens */
+  }
+
+  .food-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .food-item img {
+    max-height: 100px;
+  }
+}
+.More {
+  background-color: #ff0000;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  padding: 1.2rem 2.4rem; /* Further increase padding for larger button size */
+  font-size: 1.4rem; /* Slightly increase font size again */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto; /* Center the button both vertically and horizontally */
+}
+
+.More:hover {
+  background-color: #cc0000;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.More:active {
+  background-color: #990000;
+  transform: translateY(0);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+}
+.More :active {
+  background-color: #003f7f;
+  transform: translateY(0);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer */
+.Contact {
+  background-color: red;
+  color: white;
+  text-align: center;
+  font-size: 1.3rem; /* Increase font size */
+  padding: 1.3rem 0; /* Add padding for spacing */
+  font-family: "Open Sans", sans-serif;
+  margin-top: 2rem; /* Add margin to separate from the content above */
+}
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1rem;
+  color: white;
+}
+.fa-facebook {
+  color: white;
+  font-size: 2.5rem;
+  transition: all 0.3s ease;
+}
+.fa-facebook:hover {
+  transform: scale(1.2);
+}
+.fa-instagram {
+  color: white;
+  font-size: 2.5rem;
+  transition: all 0.3s ease;
+}
+.fa-instagram:hover {
+  transform: scale(1.2);
+}
+/* Định dạng dropdown trong index.html */
+.size-select {
+  padding: 8px 12px;
+  font-family: "Lato", sans-serif;
+  font-size: 14px;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  width: 100%;
+  max-width: 150px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  appearance: none; /* Xóa giao diện mặc định của trình duyệt */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 12px;
+}
+
+/* Hiệu ứng hover và focus */
+.size-select:hover {
+  border-color: #ff6347;
+  box-shadow: 0 0 5px rgba(255, 99, 71, 0.3);
+}
+
+.size-select:focus {
+  border-color: #ff6347;
+  box-shadow: 0 0 8px rgba(255, 99, 71, 0.5);
+}
+
+/* Định dạng dropdown trong cart.html */
+.cart-item-size select {
+  padding: 6px 10px;
+  font-family: "Lato", sans-serif;
+  font-size: 13px;
+  color: #333;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+  background-size: 12px;
+}
+
+.cart-item-size select:hover {
+  border-color: #ff6347;
+  box-shadow: 0 0 5px rgba(255, 99, 71, 0.3);
+}
+
+.cart-item-size select:focus {
+  border-color: #ff6347;
+  box-shadow: 0 0 8px rgba(255, 99, 71, 0.5);
+}
+
+/* Đảm bảo responsive */
+@media (max-width: 600px) {
+  .size-select {
+    font-size: 13px;
+    padding: 6px 10px;
+    max-width: 120px;
+  }
+
+  .cart-item-size select {
+    font-size: 12px;
+    padding: 5px 8px;
+    width: 100px;
+  }
+}

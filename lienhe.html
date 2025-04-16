@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="lienhe.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">Daisy</div>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-item">Trang chủ</a>
+        <a href="Menu.html" class="nav-item">Menu</a>
+        <a href="Giohang.html" class="nav-item">Giỏ hàng</a>
+        <a href="#" class="nav-item">Liên hệ</a>
+      </div>
+
+      <div class="user-login">
+        <button class="login-btn">
+          <i class="fas fa-user"></i> User Login
+        </button>
+        <div class="dropdown-content">
+          <a href="dangnhap.html"
+            ><i class="fas fa-sign-in-alt"></i> Đăng nhập</a
+          >
+          <a href="dangky.html"><i class="fas fa-user-plus"></i> Đăng ký</a>
+        </div>
+      </div>
+    </nav>
+    <div class="contact-form">
+      <h3>Gửi câu hỏi và phản hồi cho chúng tôi</h3>
+      <form action="/submit-contact" method="post">
+        <div class="form-group">
+          <label for="name">Họ và Tên</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Nhập họ tên"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Nhập email"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="phone">Số điện thoại</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            pattern="[0-9]{10}"
+            placeholder="Nhập số điện thoại"
+          />
+        </div>
+        <div class="form-group">
+          <label for="message">Nội dung</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Nội dung câu hỏi"
+            required
+          ></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Gửi</button>
+      </form>
+    </div>
+  </body>
+</html>

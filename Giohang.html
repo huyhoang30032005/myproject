@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Giỏ Hàng - Daisy Pizza</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="dropdown.css" />
+    <style>
+      .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+      }
+      h1 {
+        font-family: "Playfair Display", serif;
+        text-align: center;
+        color: #ff6347;
+        margin-bottom: 20px;
+      }
+      .cart-item {
+        display: flex;
+        align-items: center;
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+        margin-bottom: 10px;
+      }
+      .cart-item img {
+        width: 80px;
+        height: 80px;
+        border-radius: 8px;
+        margin-right: 15px;
+      }
+      .cart-item-details {
+        flex: 1;
+      }
+      .cart-item-details h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 18px;
+        color: #333;
+      }
+      .cart-item-details p {
+        font-family: "Lato", sans-serif;
+        color: #777;
+        margin: 5px 0;
+      }
+      .cart-item-quantity {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .cart-item-quantity button {
+        background-color: #ff6347;
+        color: #fff;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 4px;
+        font-family: "Lato", sans-serif;
+      }
+      .cart-item-quantity button:hover {
+        background-color: #e5533d;
+      }
+      .cart-item-quantity input {
+        width: 40px;
+        text-align: center;
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-family: "Lato", sans-serif;
+      }
+      .cart-item-size {
+        margin-right: 10px;
+      }
+      .cart-total {
+        text-align: right;
+        padding: 20px;
+        font-size: 20px;
+        font-family: "Playfair Display", serif;
+        color: #ff6347;
+      }
+      .clear-cart-btn {
+        display: inline-block;
+        margin-right: 20px;
+        padding: 10px 15px;
+        background-color: #ccc;
+        color: #333;
+        text-decoration: none;
+        border-radius: 4px;
+        font-family: "Lato", sans-serif;
+      }
+      .clear-cart-btn:hover {
+        background-color: #b3b3b3;
+      }
+      .checkout-btn {
+        display: block;
+        width: 100%;
+        max-width: 300px;
+        margin: 20px auto;
+        padding: 15px;
+        background-color: #ff6347;
+        color: #fff;
+        text-align: center;
+        text-decoration: none;
+        border-radius: 8px;
+        font-family: "Lato", sans-serif;
+        font-size: 18px;
+      }
+      .checkout-btn:hover {
+        background-color: #e5533d;
+      }
+      .empty-cart {
+        text-align: center;
+        color: #777;
+        padding: 20px;
+        font-family: "Lato", sans-serif;
+      }
+      @media (max-width: 600px) {
+        .cart-item {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .cart-item img {
+          margin-bottom: 10px;
+        }
+        .cart-total {
+          text-align: center;
+        }
+        .cart-item-size {
+          margin-bottom: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">Daisy</div>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-item">Trang chủ</a>
+        <a href="Menu.html" class="nav-item">Menu</a>
+        <a href="cart.html" class="nav-item">Giỏ hàng</a>
+        <a href="#" class="nav-item">Liên hệ</a>
+      </div>
+
+      <div class="user-login">
+        <button class="login-btn">
+          <i class="fas fa-user"></i> User Login
+        </button>
+        <div class="dropdown-content">
+          <a href="dangnhap.html"
+            ><i class="fas fa-sign-in-alt"></i> Đăng nhập</a
+          >
+          <a href="dangky.html"><i class="fas fa-user-plus"></i> Đăng ký</a>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <h1>Giỏ Hàng Của Bạn</h1>
+      <div id="cart-items"></div>
+      <div class="cart-total">Tổng cộng: <span id="total">0 VNĐ</span></div>
+      <a href="#" class="clear-cart-btn" onclick="clearCart()">Xóa giỏ hàng</a>
+      <a href="thanhtoan.html" class="checkout-btn">Đặt Hàng</a>
+    </div>
+    <script>
+      // Định nghĩa giá cho từng kích thước
+      const sizePrices = {
+        // Pizza
+        margherita: { small: 100000, medium: 120000, large: 140000 },
+        pepperoni: { small: 110000, medium: 130000, large: 150000 },
+        "seafood-pizza": { small: 140000, medium: 160000, large: 180000 },
+        "bbq-chicken-pizza": { small: 120000, medium: 140000, large: 160000 },
+        "hawaiian-pizza": { small: 110000, medium: 130000, large: 150000 },
+        "vegetarian-pizza": { small: 90000, medium: 110000, large: 130000 },
+        "supreme-pizza": { small: 130000, medium: 150000, large: 170000 },
+        "cheese-pizza": { small: 80000, medium: 100000, large: 120000 },
+        "mushroom-pizza": { small: 100000, medium: 120000, large: 140000 },
+        // Chicken and Hamburger
+        "chicken-wings": { small: 60000, medium: 80000, large: 100000 },
+        "fried-chicken": { small: 70000, medium: 90000, large: 110000 },
+        "chicken-nuggets": { small: 50000, medium: 70000, large: 90000 },
+        "chicken-tenders": { small: 65000, medium: 85000, large: 105000 },
+        "grilled-chicken": { small: 75000, medium: 95000, large: 115000 },
+        "spicy-chicken": { small: 70000, medium: 90000, large: 110000 },
+        "beef-burger": { small: 80000, medium: 100000, large: 120000 },
+        "chicken-burger": { small: 70000, medium: 90000, large: 110000 },
+        "veggie-burger": { small: 60000, medium: 80000, large: 100000 },
+        // Fries and Pasta
+        "french-fries": { small: 40000, medium: 50000, large: 60000 },
+        "curly-fries": { small: 50000, medium: 60000, large: 70000 },
+        "spaghetti-bolognese": { small: 100000, medium: 120000, large: 140000 },
+        "carbonara-pasta": { small: 110000, medium: 130000, large: 150000 },
+        "pesto-pasta": { small: 90000, medium: 110000, large: 130000 },
+        // Từ index.html
+        carbonara: { small: 130000, medium: 150000, large: 170000 },
+        "caesar-salad": { small: 70000, medium: 90000, large: 110000 },
+        lasagna: { small: 120000, medium: 140000, large: 160000 },
+        "garlic-bread": { small: 40000, medium: 50000, large: 60000 },
+        "chicken-alfredo": { small: 100000, medium: 120000, large: 140000 },
+      };
+
+      function displayCart() {
+        let cart = JSON.parse(localStorage.getItem("daisy-cart")) || {};
+        console.log("Cart data:", cart);
+        let cartItems = document.getElementById("cart-items");
+        let total = 0;
+
+        cartItems.innerHTML = "";
+
+        if (Object.keys(cart).length === 0) {
+          cartItems.innerHTML =
+            '<p class="empty-cart">Giỏ hàng của bạn đang trống!</p>';
+        } else {
+          for (let cartId in cart) {
+            let item = cart[cartId];
+            console.log("Rendering item:", item);
+            let itemTotal = item.price * item.quantity;
+            total += itemTotal;
+
+            // Không hiển thị dropdown cho Drinks
+            let sizeSelect = "";
+            if (item.size !== "default") {
+              sizeSelect = `
+                            <div class="cart-item-size">
+                                <select onchange="updateSize('${cartId}', this.value)">
+                                    <option value="small" ${
+                                      item.size === "small" ? "selected" : ""
+                                    }>Nhỏ</option>
+                                    <option value="medium" ${
+                                      item.size === "medium" ? "selected" : ""
+                                    }>Vừa</option>
+                                    <option value="large" ${
+                                      item.size === "large" ? "selected" : ""
+                                    }>Lớn</option>
+                                </select>
+                            </div>
+                        `;
+            }
+
+            cartItems.innerHTML += `
+                        <div class="cart-item">
+                            <img src="${item.image}" alt="${item.name}">
+                            <div class="cart-item-details">
+                                <h3>${item.name}</h3>
+                                <p>Giá: ${item.price.toLocaleString(
+                                  "vi-VN"
+                                )} VNĐ</p>
+                                <p>Kích thước: ${
+                                  item.size === "default"
+                                    ? "Mặc định"
+                                    : item.size.charAt(0).toUpperCase() +
+                                      item.size.slice(1)
+                                }</p>
+                            </div>
+                            ${sizeSelect}
+                            <div class="cart-item-quantity">
+                                <button onclick="updateQuantity('${cartId}', -1)">-</button>
+                                <input type="text" id="${cartId}" value="${
+              item.quantity
+            }" readonly>
+                                <button onclick="updateQuantity('${cartId}', 1)">+</button>
+                            </div>
+                        </div>
+                    `;
+          }
+        }
+
+        document.getElementById("total").textContent =
+          total.toLocaleString("vi-VN") + " VNĐ";
+      }
+
+      function updateQuantity(cartId, change) {
+        let cart = JSON.parse(localStorage.getItem("daisy-cart")) || {};
+        let newQuantity = cart[cartId].quantity + change;
+
+        if (newQuantity < 1) {
+          delete cart[cartId];
+        } else {
+          cart[cartId].quantity = newQuantity;
+        }
+
+        localStorage.setItem("daisy-cart", JSON.stringify(cart));
+        console.log("Cart after quantity update:", cart);
+        displayCart();
+      }
+
+      function updateSize(oldCartId, newSize) {
+        let cart = JSON.parse(localStorage.getItem("daisy-cart")) || {};
+        let item = cart[oldCartId];
+        if (item && item.size !== "default") {
+          let newCartId = `${item.id}-${newSize}`;
+          if (newCartId !== oldCartId) {
+            if (cart[newCartId]) {
+              cart[newCartId].quantity += item.quantity;
+            } else {
+              cart[newCartId] = {
+                id: item.id,
+                name: item.name,
+                size: newSize,
+                price: sizePrices[item.id][newSize],
+                image: item.image,
+                quantity: item.quantity,
+              };
+            }
+            delete cart[oldCartId];
+          } else {
+            cart[oldCartId].size = newSize;
+            cart[oldCartId].price = sizePrices[item.id][newSize];
+          }
+          localStorage.setItem("daisy-cart", JSON.stringify(cart));
+          console.log("Cart after size update:", cart);
+          displayCart();
+        }
+      }
+
+      function clearCart() {
+        localStorage.removeItem("daisy-cart");
+        console.log("Cart cleared");
+        displayCart();
+      }
+
+      displayCart();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="logo">Daisy</div>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-item">Trang chủ</a>
+        <a href="Menu.html" class="nav-item">Menu</a>
+        <a href="cart.html" class="nav-item">Giỏ hàng</a>
+        <a href="#" class="nav-item">Liên hệ</a>
+      </div>
+      <div class="group">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="icon">
+          <g>
+            <path
+              d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"
+            ></path>
+          </g>
+        </svg>
+        <input class="input" type="search" placeholder="Search" />
+      </div>
+      <div class="user-login">
+        <button class="login-btn">
+          <i class="fas fa-user"></i> User Login
+        </button>
+        <div class="dropdown-content">
+          <a href="dangnhap.html"
+            ><i class="fas fa-sign-in-alt"></i> Đăng nhập</a
+          >
+          <a href="dangky.html"><i class="fas fa-user-plus"></i> Đăng ký</a>
+        </div>
+      </div>
+    </nav>
+    <div class="red-section">
+      <div class="left-content">
+        <h2>Tiêu đề sản phẩm</h2>
+        <p>
+          Mô tả ngắn về sản phẩm của bạn sẽ được đặt ở đây. Đây là nơi bạn có
+          thể giới thiệu ngắn gọn.
+        </p>
+        <button class="order-btn">Order Now</button>
+      </div>
+      <div class="right-image">
+        <img src="nen.png" alt="Product Image" />
+      </div>
+    </div>
+    <h2 class="section-title">About Us</h2>
+    <div class="full-width-section">
+      <div class="left-image">
+        <img src="pngwing.com.png" alt="Example Image" />
+      </div>
+      <div class="right-content">
+        <h2>Về Daisy Pizza</h2>
+        <p>
+          Daisy Pizza là một trong những thương hiệu pizza hàng đầu tại Việt
+          Nam, nổi tiếng với chất lượng và hương vị tuyệt vời. Chúng tôi cam kết
+          mang đến cho khách hàng những trải nghiệm ẩm thực tuyệt vời nhất.
+        </p>
+        <p>
+          Với đội ngũ đầu bếp tài năng và nguyên liệu tươi ngon, chúng tôi tự
+          hào mang đến những chiếc pizza thơm ngon, giòn tan và đầy hương vị.
+          Hãy đến với chúng tôi để trải nghiệm sự khác biệt!
+        </p>
+        <p>
+          Chúng tôi không chỉ cung cấp pizza mà còn mang đến những món ăn khác
+          như pasta, salad và đồ uống. Tất cả đều được chế biến từ nguyên liệu
+          tươi ngon và đảm bảo vệ sinh an toàn thực phẩm.
+        </p>
+        <p>
+          Hãy đến với Daisy Pizza để thưởng thức những món ăn ngon và trải
+          nghiệm dịch vụ tuyệt vời. Chúng tôi luôn sẵn sàng phục vụ bạn với nụ
+          cười và sự nhiệt tình nhất.
+        </p>
+        <p>
+          Cảm ơn bạn đã chọn Daisy Pizza. Chúng tôi rất mong được phục vụ bạn
+          trong thời gian tới!
+        </p>
+        <p>
+          Nếu bạn có bất kỳ câu hỏi nào hoặc cần thêm thông tin, hãy liên hệ với
+          chúng tôi qua trang Liên hệ. Chúng tôi sẽ phản hồi bạn trong thời gian
+          sớm nhất.
+        </p>
+        <p>
+          Chúng tôi rất mong được phục vụ bạn và mang đến cho bạn những trải
+          nghiệm ẩm thực tuyệt vời nhất tại Daisy Pizza!
+        </p>
+      </div>
+    </div>
+    <h2 class="section-title2">Có thể bạn sẽ thích</h2>
+    <div class="food-grid">
+      <div class="food-item">
+        <img src="pizza1.png" alt="Food 1" />
+        <h3>Pizza Margherita</h3>
+
+        <select class="size-select" data-id="margherita">
+          <option value="small" data-price="100000">Nhỏ (100,000 VNĐ)</option>
+          <option value="medium" data-price="120000" selected>
+            Vừa (120,000 VNĐ)
+          </option>
+          <option value="large" data-price="140000">Lớn (140,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="margherita"
+          data-name="Pizza Margherita"
+          data-image="pizza1.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="pizza2.png" alt="Food 2" />
+        <h3>Spaghetti Carbonara</h3>
+
+        <select class="size-select" data-id="carbonara">
+          <option value="small" data-price="130000">Nhỏ (130,000 VNĐ)</option>
+          <option value="medium" data-price="150000" selected>
+            Vừa (150,000 VNĐ)
+          </option>
+          <option value="large" data-price="170000">Lớn (170,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="carbonara"
+          data-name="Spaghetti Carbonara"
+          data-image="pizza2.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="chicken.png" alt="Food 3" />
+        <h3>Caesar Salad</h3>
+
+        <select class="size-select" data-id="caesar-salad">
+          <option value="small" data-price="70000">Nhỏ (70,000 VNĐ)</option>
+          <option value="medium" data-price="90000" selected>
+            Vừa (90,000 VNĐ)
+          </option>
+          <option value="large" data-price="110000">Lớn (110,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="caesar-salad"
+          data-name="Caesar Salad"
+          data-image="chicken.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="fries1.png" alt="Food 4" />
+        <h3>Pepperoni Pizza</h3>
+
+        <select class="size-select" data-id="pepperoni">
+          <option value="small" data-price="110000">Nhỏ (110,000 VNĐ)</option>
+          <option value="medium" data-price="130000" selected>
+            Vừa (130,000 VNĐ)
+          </option>
+          <option value="large" data-price="150000">Lớn (150,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="pepperoni"
+          data-name="Pepperoni Pizza"
+          data-image="fries1.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="pepsi.png" alt="Food 5" />
+        <h3>Lasagna</h3>
+
+        <select class="size-select" data-id="lasagna">
+          <option value="small" data-price="120000">Nhỏ (120,000 VNĐ)</option>
+          <option value="medium" data-price="140000" selected>
+            Vừa (140,000 VNĐ)
+          </option>
+          <option value="large" data-price="160000">Lớn (160,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="lasagna"
+          data-name="Lasagna"
+          data-image="pepsi.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="kemdau.png" alt="Food 6" />
+        <h3>Garlic Bread</h3>
+
+        <select class="size-select" data-id="garlic-bread">
+          <option value="small" data-price="40000">Nhỏ (40,000 VNĐ)</option>
+          <option value="medium" data-price="50000" selected>
+            Vừa (50,000 VNĐ)
+          </option>
+          <option value="large" data-price="60000">Lớn (60,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="garlic-bread"
+          data-name="Garlic Bread"
+          data-image="kemdau.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="chocolate.png" alt="Food 7" />
+        <h3>Seafood Pizza</h3>
+
+        <select class="size-select" data-id="seafood-pizza">
+          <option value="small" data-price="140000">Nhỏ (140,000 VNĐ)</option>
+          <option value="medium" data-price="160000" selected>
+            Vừa (160,000 VNĐ)
+          </option>
+          <option value="large" data-price="180000">Lớn (180,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="seafood-pizza"
+          data-name="Seafood Pizza"
+          data-image="chocolate.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <img src="coca.png" alt="Food 8" />
+        <h3>Chicken Alfredo</h3>
+
+        <select class="size-select" data-id="chicken-alfredo">
+          <option value="small" data-price="100000">Nhỏ (100,000 VNĐ)</option>
+          <option value="medium" data-price="120000" selected>
+            Vừa (120,000 VNĐ)
+          </option>
+          <option value="large" data-price="140000">Lớn (140,000 VNĐ)</option>
+        </select>
+        <button
+          class="add-to-cart"
+          data-id="chicken-alfredo"
+          data-name="Chicken Alfredo"
+          data-image="coca.png"
+        >
+          <i class="fas fa-plus"></i> Add to Cart
+        </button>
+      </div>
+      <div class="food-item">
+        <a href="Menu.html" class="More"
+          ><i class="fas fa-ellipsis-h"></i> Xem thêm</a
+        >
+      </div>
+    </div>
+    <div class="Contact">
+      <h2 class="Contact-title">Daisy</h2>
+      <p class="contact-info">
+        <strong>Số điện thoại đặt hàng:</strong> 0123-456-789
+      </p>
+      <p class="Contact-address"><strong>Địa chỉ:</strong></p>
+      <ul>
+        <li>Cơ sở 1: 123 Đường A, Quận 1, TP.HCM</li>
+        <li>Cơ sở 2: 456 Đường B, Quận 2, TP.HCM</li>
+        <li>Cơ sở 3: 789 Đường C, Quận 3, TP.HCM</li>
+      </ul>
+      <p class="contact-info">
+        <strong>Giờ mở cửa:</strong> 9:00 AM - 10:00 PM
+      </p>
+      <p class="contact-info"><strong>Email:</strong> contact@daisypizza.com</p>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank"
+          ><i class="fab fa-facebook"></i
+        ></a>
+        <a href="https://instagram.com" target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </div>
+    </div>
+    <script>
+      document.querySelectorAll(".add-to-cart").forEach((button) => {
+        button.addEventListener("click", () => {
+          const id = button.getAttribute("data-id");
+          const name = button.getAttribute("data-name");
+          const image = button.getAttribute("data-image");
+          const select = document.querySelector(
+            `.size-select[data-id="${id}"]`
+          );
+          const size = select.value;
+          const price = parseInt(
+            select.options[select.selectedIndex].getAttribute("data-price")
+          );
+
+          let cart = JSON.parse(localStorage.getItem("daisy-cart")) || {};
+
+          // Tạo ID kết hợp để phân biệt sản phẩm theo size
+          const cartId = `${id}-${size}`;
+
+          if (cart[cartId]) {
+            cart[cartId].quantity += 1;
+          } else {
+            cart[cartId] = {
+              id: id, // Lưu ID gốc để dễ quản lý
+              name: name,
+              size: size,
+              price: price,
+              image: image,
+              quantity: 1,
+            };
+          }
+
+          localStorage.setItem("daisy-cart", JSON.stringify(cart));
+          alert(`${name} (${size}) đã được thêm vào giỏ hàng!`);
+        });
+      });
+    </script>
+  </body>
+</html>

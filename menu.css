@@ -1,0 +1,327 @@
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: red;
+  margin-left: 2rem;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  margin-right: 2rem;
+  font-size: 1.2rem;
+  font-family: "Open Sans", sans-serif;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: #333;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  font-family: "Open Sans", sans-serif;
+}
+
+.nav-item:hover {
+  color: red;
+  transform: scale(1.1);
+  text-decoration: underline;
+}
+
+/* Search Input */
+.group {
+  display: flex;
+  align-items: center;
+  position: relative;
+  max-width: 200px;
+  width: 100%;
+  margin: 0 1rem;
+}
+
+.input {
+  width: 100%;
+  height: 2.5rem;
+  padding: 0 1rem 0 2.5rem;
+  border: 2px solid transparent;
+  border-radius: 8px;
+  outline: none;
+  background-color: #f3f3f4;
+  color: #0d0c22;
+  transition: 0.3s ease;
+}
+
+.input::placeholder {
+  color: #9e9ea7;
+}
+
+.input:focus,
+.input:hover {
+  border-color: rgba(0, 48, 73, 0.4);
+  background-color: #fff;
+  box-shadow: 0 0 0 4px rgb(0 48 73 / 10%);
+}
+
+.icon {
+  position: absolute;
+  left: 0.8rem;
+  fill: #9e9ea7;
+  width: 1rem;
+  height: 1rem;
+}
+
+/* User Login Dropdown */
+.user-login {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.login-btn {
+  background-color: red;
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.login-btn:hover {
+  background-color: white;
+  color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 4px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-content a i {
+  margin-right: 0.5rem;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  text-decoration: underline;
+}
+
+.user-login:hover .dropdown-content {
+  display: block;
+}
+
+.login-btn i {
+  margin-right: 0.4rem;
+}
+/* Promotional Section */
+.red-section {
+  display: flex;
+  background-color: #ff0000;
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 0; /* Loại bỏ border-radius để chiếm toàn bộ chiều ngang */
+  overflow: hidden;
+}
+
+.left-content {
+  flex: 1;
+  padding: 2rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.left-content h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.8rem;
+}
+
+.left-content p {
+  margin: 0 0 1rem;
+  font-size: 1rem;
+}
+
+.order-btn {
+  background-color: white;
+  color: #ff0000;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.order-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.right-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right-image img {
+  max-width: 100%;
+  height: auto;
+  transition: transform 1s ease;
+}
+
+.right-image img:hover {
+  transform: scale(1.05);
+  transform: rotate(90deg);
+}
+
+/* Responsive Design */
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 1rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+    margin-left: 1rem;
+  }
+
+  .nav-menu {
+    gap: 1.5rem;
+    margin-right: 1rem;
+  }
+
+  .nav-item {
+    font-size: 1rem;
+  }
+
+  .group {
+    max-width: 180px;
+  }
+
+  .left-content {
+    padding: 1.5rem;
+  }
+
+  .left-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .left-content p {
+    font-size: 0.9rem;
+  }
+
+  .right-image img {
+    max-width: 90%;
+  }
+}
+
+/* Mobile (dưới 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .logo {
+    margin-left: 0;
+    margin-bottom: 1rem;
+  }
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: center;
+    margin-right: 0;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .nav-item {
+    font-size: 1.1rem;
+    padding: 0.5rem;
+    width: 100%;
+    text-align: center;
+  }
+
+  .group {
+    max-width: 100%;
+    margin: 1rem 0;
+  }
+
+  .user-login {
+    margin-right: 0;
+    margin-top: 1rem;
+  }
+
+  .dropdown-content {
+    right: 50%;
+    transform: translateX(50%);
+    min-width: 140px;
+  }
+
+  .red-section {
+    flex-direction: column;
+  }
+
+  .left-content {
+    padding: 1.5rem;
+  }
+
+  .right-image {
+    padding: 1rem;
+  }
+
+  .right-image img {
+    max-width: 80%;
+  }
+}
+/* Pizza Title */
+.Pizza-title {
+  color: red;
+  font-family: "Cursive", sans-serif; /* Phong cách chữ mới lạ */
+  text-align: center;
+  font-size: 2rem; /* Tăng cỡ chữ */
+  margin-top: 4rem; /* Tạo khoảng cách với các nội dung bên trên */
+  position: relative;
+}
+
+.Pizza-title::before,
+.Pizza-title::after {
+  content: "";
+  display: inline-block;
+  width: 400px;
+  height: 2px;
+  background-color: red;
+  vertical-align: middle;
+  margin: 0 10px;
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="dangky.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="loading" class="loading-overlay">
+        <div class="loading-wave">
+          <div class="loading-bar"></div>
+          <div class="loading-bar"></div>
+          <div class="loading-bar"></div>
+          <div class="loading-bar"></div>
+        </div>
+      </div>
+      <!-- Phần thông báo thành công -->
+      <div id="success" class="success-overlay">
+        <div class="success-container">
+          <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+            <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+            <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+          </svg>
+          <p class="success-message">Đặt hàng thành công!</p>
+          <button class="home-btn">Quay về trang chủ</button>
+        </div>
+      </div>
+  </div>
+    <nav class="navbar">
+      <div class="logo">Daisy</div>
+      <div class="nav-menu">
+        <a href="index.html" class="nav-item">Trang chủ</a>
+        <a href="Menu.html" class="nav-item">Menu</a>
+        <a href="#" class="nav-item">Giỏ hàng </a>
+        <a href="#" class="nav-item">Liên hệ</a>
+      </div>
+     
+      
+      <div class="user-login">
+        <button class="login-btn">
+          <i class="fas fa-user"></i> User Login
+        </button>
+        <div class="dropdown-content">
+          <a href="dangnhap.html"><i class="fas fa-sign-in-alt"></i> Đăng nhập</a>
+          <a href="dangky.html"><i class="fas fa-user-plus"></i> Đăng ký</a>
+        </div>
+      </div>
+    </nav>
+    <!--Form-->
+    <div class="register-form">
+        <h2>Thông tin thanh toán</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="username">Họ và Tên</label>
+                <input type="text" id="username" name="username" placeholder="Họ và Tên" required />
+            </div>
+            <div class="form-group">
+                <label for="phone">Số điện thoại:</label>
+                <input type="tel" id="phone" name="phone"pattern="[0-9]{10}" placeholder="Nhập số điện thoại" required />
+            </div>
+            <div class="form-group">
+                <label for="password">Địa chỉ</label>
+                <input type="text" id="password" name="password" placeholder="Địa chỉ" required />
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">Ghi chú</label>
+                <input type="text" id="confirm-password" name="confirm-password" placeholder="Ghi chú" required />
+            </div>
+            <button type="submit" class="register-btn">Thanh Toán</button>
+        </form>
+    </div>
+    </div>
+    <div class="Contact">
+        <h2 class="Contact-title">Daisy</h2>
+        <p class="contact-info">
+          <strong>Số điện thoại đặt hàng:</strong> 0123-456-789
+        </p>
+        <p class="Contact-address"><strong>Địa chỉ:</strong></p>
+        <ul>
+          <li>Cơ sở 1: 123 Đường A, Quận 1, TP.HCM</li>
+          <li>Cơ sở 2: 456 Đường B, Quận 2, TP.HCM</li>
+          <li>Cơ sở 3: 789 Đường C, Quận 3, TP.HCM</li>
+        </ul>
+        <p class="contact-info">
+          <strong>Giờ mở cửa:</strong> 9:00 AM - 10:00 PM
+        </p>
+        <p class="contact-info"><strong>Email:</strong> contact@daisypizza.com</p>
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="https://instagram.com" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+        </div>
+      </div>
+      <script>
+        document
+    .querySelector(".register-btn")
+    .addEventListener("click", function (event) {
+      // Ngăn form gửi ngay để thấy hiệu ứng
+      event.preventDefault();
+
+      // Hiển thị loading
+      document.getElementById("loading").classList.add("active");
+
+      // Giả lập thời gian xử lý
+      setTimeout(() => {
+        // Ẩn loading
+        document.getElementById("loading").classList.remove("active");
+
+        // Hiển thị thông báo thành công
+        document.getElementById("success").classList.add("active");
+      }, 3000); // 3000ms = 3 giây cho loading
+    });
+
+  // Xử lý nút Quay về trang chủ
+  document.querySelector(".home-btn").addEventListener("click", function () {
+    // Ẩn thông báo thành công
+    document.getElementById("success").classList.remove("active");
+    // Chuyển hướng về trang chủ
+    window.location.href = "index.html";
+  });
+      </script>
+  </body>
+</html>
